@@ -160,7 +160,19 @@ public class TablaMotocicleta implements TableModel {
         }
         return connection;
     }
-
+    public boolean modPer (Motocicleta per){
+        boolean res = false;
+        try {
+            if (ldao.update(per)){
+                res = true;
+            }else{
+                res = false;
+            }
+        }catch (SQLException sqle){
+            System.out.println(sqle.getMessage());
+        }
+        return res;
+    }
 
     public boolean agregarMotocicleta(Motocicleta motocicleta) {
         boolean resultado = false;

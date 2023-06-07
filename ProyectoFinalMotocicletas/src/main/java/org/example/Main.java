@@ -24,7 +24,7 @@ public class Main {
 
             clip.loop(Clip.LOOP_CONTINUOUSLY);
 
-            Ventana view = new Ventana ("Motocicleta");
+            Ventana view = new Ventana ("Motocicle");
         ControladorMotocicleta controller = new ControladorMotocicleta(view);
             view.addWindowListener(new java.awt.event.WindowAdapter() {
                 @Override

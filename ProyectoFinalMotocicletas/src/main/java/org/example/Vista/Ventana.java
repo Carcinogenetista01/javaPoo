@@ -12,7 +12,6 @@ public class Ventana extends JFrame {
     private JLabel lblcolor;
     private JLabel lblcosto;
     private JLabel lblimagen;
-    private JLabel lblgif;
     private JTextField txtid;
     private JTextField txturl;
     private JTextField txtmodelo;
@@ -21,8 +20,21 @@ public class Ventana extends JFrame {
     private JTextField txtcosto;
     private JButton btnagregar;
     private JButton btncargar;
+    private JLabel lblmid;
+    private JLabel lblmurl;
+    private JLabel lblmmodelo;
+    private JLabel lblmanio;
+    private JLabel lblmcolor;
+    private JLabel lblmcosto;
+    private JTextField txtmid;
+    private JTextField txtmurl;
+    private JTextField txtmmodelo;
+    private JTextField txtmanio;
+    private JTextField txtmcolor;
+    private JTextField txtmcosto;
     private JButton btneliminar;
     private JButton btnactualizar;
+    private JButton btnmodificar;
     private JTable tblmotocicleta;
     private JScrollPane scrollPane;
     private JPanel panel1;
@@ -97,8 +109,37 @@ public class Ventana extends JFrame {
         panel4.setBackground(new Color(254, 158, 246));
         btneliminar = new JButton("Eliminar");
         btnactualizar = new JButton("Actualizar");
+        btnmodificar = new JButton("Modificar");
         panel4.add(btneliminar);
         panel4.add(btnactualizar);
+        lblmid = new JLabel("Id:");
+        lblmurl = new JLabel("Url de la imagen: ");
+        lblmmodelo = new JLabel("Modelo:");
+        lblmanio = new JLabel("Año: ");
+        lblmcolor = new JLabel("Color: ");
+        lblmcosto = new JLabel("Costo: ");
+        txtmid = new JTextField(2);
+        txtmid.setText("0");
+        txtmurl = new JTextField(10);
+        txtmmodelo = new JTextField(13);
+        txtmanio = new JTextField(4);
+        txtmcolor = new JTextField(10);
+        txtmcosto = new JTextField(8);
+        txtmurl = new JTextField(8);
+        panel4.add(lblmid);
+        panel4.add(txtmid);
+        panel4.add(lblmanio);
+        panel4.add(txtmanio);
+        panel4.add(lblmmodelo);
+        panel4.add(txtmmodelo);
+        panel4.add(lblmcolor);
+        panel4.add(txtmcolor);
+        panel4.add(lblmcosto);
+        panel4.add(txtmcosto);
+        panel4.add(lblmurl);
+        panel4.add(txtmurl);
+        panel4.add(btnmodificar);
+
 
 
 
@@ -307,8 +348,109 @@ public class Ventana extends JFrame {
     public void setLblimagen(JLabel lblimagen) {
         this.lblimagen = lblimagen;
     }
-    public JLabel getLblgif() {
-        return lblgif;
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton btnmodificar) {
+        this.btnmodificar = btnmodificar;
+    }
+
+    public JLabel getLblmid() {
+        return lblmid;
+    }
+
+    public void setLblmid(JLabel lblmid) {
+        this.lblmid = lblmid;
+    }
+
+    public JLabel getLblmurl() {
+        return lblmurl;
+    }
+
+    public void setLblmurl(JLabel lblmurl) {
+        this.lblmurl = lblmurl;
+    }
+
+    public JLabel getLblmmodelo() {
+        return lblmmodelo;
+    }
+
+    public void setLblmmodelo(JLabel lblmmodelo) {
+        this.lblmmodelo = lblmmodelo;
+    }
+
+    public JLabel getLblmanio() {
+        return lblmanio;
+    }
+
+    public void setLblmanio(JLabel lblmanio) {
+        this.lblmanio = lblmanio;
+    }
+
+    public JLabel getLblmcolor() {
+        return lblmcolor;
+    }
+
+    public void setLblmcolor(JLabel lblmcolor) {
+        this.lblmcolor = lblmcolor;
+    }
+
+    public JLabel getLblmcosto() {
+        return lblmcosto;
+    }
+
+    public void setLblmcosto(JLabel lblmcosto) {
+        this.lblmcosto = lblmcosto;
+    }
+
+    public JTextField getTxtmid() {
+        return txtmid;
+    }
+
+    public void setTxtmid(JTextField txtmid) {
+        this.txtmid = txtmid;
+    }
+
+    public JTextField getTxtmurl() {
+        return txtmurl;
+    }
+
+    public void setTxtmurl(JTextField txtmurl) {
+        this.txtmurl = txtmurl;
+    }
+
+    public JTextField getTxtmmodelo() {
+        return txtmmodelo;
+    }
+
+    public void setTxtmmodelo(JTextField txtmmodelo) {
+        this.txtmmodelo = txtmmodelo;
+    }
+
+    public JTextField getTxtmanio() {
+        return txtmanio;
+    }
+
+    public void setTxtmanio(JTextField txtmanio) {
+        this.txtmanio = txtmanio;
+    }
+
+    public JTextField getTxtmcolor() {
+        return txtmcolor;
+    }
+
+    public void setTxtmcolor(JTextField txtmcolor) {
+        this.txtmcolor = txtmcolor;
+    }
+
+    public JTextField getTxtmcosto() {
+        return txtmcosto;
+    }
+
+    public void setTxtmcosto(JTextField txtmcosto) {
+        this.txtmcosto = txtmcosto;
     }
 
     public void limpiar(){

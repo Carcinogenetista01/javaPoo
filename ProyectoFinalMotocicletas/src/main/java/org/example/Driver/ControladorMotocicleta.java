@@ -23,6 +23,7 @@ public class ControladorMotocicleta extends MouseAdapter {
         this.view.getBtnagregar().addMouseListener(this);
         this.view.getBtneliminar().addMouseListener(this);
         this.view.getBtnactualizar().addMouseListener(this);
+        this.view.getBtnmodificar().addMouseListener(this);
         tabla = new TablaMotocicleta();
         tabla.setConnection(ConexionSingleton.getInstance("Motocicletadb.DB").getConnection());
         this.view.getTblmotocicleta().setModel(tabla);
@@ -115,6 +116,38 @@ public class ControladorMotocicleta extends MouseAdapter {
                 JOptionPane.showMessageDialog(view, "Seleccione una motocicleta para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+        if (e.getSource() == view.getBtnmodificar()) {
+            int renglon = view.getTblmotocicleta().getSelectedRow();
+            Motocicleta perMod = tabla.getMotoAtIndex(renglon);
+
+            perMod.setModelo(this.view.getTxtmmodelo().getText());
+            perMod.setCosto(Double.parseDouble(this.view.getTxtmcosto().getText()));
+            perMod.setImagenURL(this.view.getTxtmurl().getText());
+            perMod.setAnio(Integer.parseInt(this.view.getTxtmanio().getText()));
+            perMod.setColor(this.view.getTxtmcolor().getText());
+
+            if (tabla.modPer(perMod)) {
+                JOptionPane.showMessageDialog(view, "Se modifico correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                tabla.cargarDatos();
+                view.getTblmotocicleta().updateUI();
+            } else {
+                JOptionPane.showMessageDialog(view, "No se ha modificado correctamente", "Aviso", JOptionPane.ERROR_MESSAGE);
+            }
+
+            this.view.getTxtmmodelo().setText("");
+            this.view.getTxtmurl().setText("");
+            this.view.getTxtmanio().setText("");
+            this.view.getTxtmcosto().setText("");
+            this.view.getTxtmcolor().setText("");
+        }
+
+
+        this.view.getTxtmmodelo().setText("");
+        this.view.getTxtmurl().setText("");
+        this.view.getTxtmanio().setText("");
+        this.view.getTxtmcosto().setText("");
+        this.view.getTxtmcolor().setText("");
+
 
         if (e.getSource() == view.getBtnactualizar()) {
             tabla.cargarDatos();
@@ -122,5 +155,6 @@ public class ControladorMotocicleta extends MouseAdapter {
             view.limpiar();
         }
     }
-    }
+}
+
 
